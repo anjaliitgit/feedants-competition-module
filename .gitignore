@@ -3,8 +3,6 @@ node_modules/
 **/node_modules/
 
 # Environment variables
-.env
-.env.*
 !.env.example
 
 # Logs
@@ -34,7 +32,6 @@ web-build/
 Thumbs.db
 
 # IDE
-.vscode/
 .idea/
 
 # Temporary files
@@ -46,3 +43,4 @@ coverage/
 
 # Build output
 build/
+config.bat
