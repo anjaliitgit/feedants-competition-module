@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "Feedants API",
+    "_postman_id": "feedants-assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"New User\",\"email\":\"new@example.com\",\"password\":\"Password@123\"}"
+        },
+        "url": "{{baseUrl}}/auth/register"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"demo@feedants.local\",\"password\":\"Demo@123\"}"
+        },
+        "url": "{{baseUrl}}/auth/login"
+      }
+    },
+    {
+      "name": "Get Competition",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/competitions/demo-classical-dance"
+      }
+    },
+    {
+      "name": "Register for Competition",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/competitions/demo-classical-dance/register"
+      }
+    },
+    {
+      "name": "My Registration",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": "{{baseUrl}}/competitions/demo-classical-dance/registration/me"
+      }
+    },
+    {
+      "name": "Reviews",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/competitions/demo-classical-dance/reviews"
+      }
+    }
+  ]
+}
