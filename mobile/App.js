@@ -21,7 +21,7 @@ export default function App() {
         const response = await api('/auth/login', {
           method: 'POST',
           body: JSON.stringify({
-            email: 'participant2@feedants.local',
+            email: 'demo@feedants.local',
             password: 'Demo@123'
           })
         });
